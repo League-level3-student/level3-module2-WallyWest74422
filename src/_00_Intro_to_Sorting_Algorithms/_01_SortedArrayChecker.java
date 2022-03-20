@@ -9,8 +9,15 @@ public class _01_SortedArrayChecker {
      * and false otherwise.
      */
     public static boolean intArraySorted(int[] arr) {
-        
-        return false;
+    	boolean ascending = false;
+        for (int i = 0; i < arr.length - 1; i++) {
+        	if( arr[i] < arr[ i+1 ] ) {
+        		ascending = true;
+        	} else {
+        		ascending = false;
+        	}
+		}
+        return ascending;
     }
 
     /*
@@ -20,7 +27,17 @@ public class _01_SortedArrayChecker {
      * The method returns true if the double array is in ascending order
      * and false otherwise.
      */
-
+    public static boolean doubleArraySorted(double[] arr) {
+    	boolean ascending = false;
+    	 for (int i = 0; i < arr.length-1; i++) {
+         	if( arr[i] < arr[ i+1 ] ) {
+         		ascending = true;
+         	} else {
+         		ascending = false;
+         	}
+ 		}
+		return ascending; 	
+    }
 
     /*
      * 3. Write a static method called charArraySorted.
@@ -30,7 +47,18 @@ public class _01_SortedArrayChecker {
      * order and false otherwise (You can compare characters just like
      * integers).
      */
-
+    public static boolean charArraySorted(char[] arr) {
+    	boolean alphabetical = false;
+    	 for (int i = 0; i < arr.length-1; i++) {
+          	if( arr[i] < arr[ i+1 ] ) {
+          		alphabetical = true;
+          	} else {
+          		alphabetical = false;
+          	}
+  		}
+    	
+    	return alphabetical;
+    }
 
     /*
      * 4. Write a static method called stringArraySorted.
@@ -39,5 +67,19 @@ public class _01_SortedArrayChecker {
      *  The method returns true if the String array is in alphabetical
      *  order and false otherwise (Use the compareTo(String) method).
      */
-
+    public static boolean stringArraySorted(String[] arr) {
+    	boolean alphabetical = false;
+    	int compare = 0;
+    	 for (int i = 0; i < arr.length-1; i++) {
+           	 compare = arr[i].compareTo(arr[i+1]);
+           	 System.out.println(compare);
+           	 if(compare <0) {
+           		 alphabetical = true;
+           	 } else {
+           		 alphabetical = false;
+           		 break;
+           	 }
+   		}
+    	return alphabetical;
+    }
 }
